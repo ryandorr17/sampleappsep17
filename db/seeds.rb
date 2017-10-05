@@ -13,7 +13,11 @@ User.create!(name:  "Example User",
 
              password:              "foobar",
 
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+
+             activated: true,
+
+             activated_at: Time.zone.now)
 
 
 
@@ -31,6 +35,10 @@ User.create!(name:  "Example User",
 
                password:              password,
 
-               password_confirmation: password)
+               password_confirmation: password,
+
+               activated: true,
+
+               activated_at: Time.zone.now)
 
 end
