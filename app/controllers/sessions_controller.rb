@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
 
-        redirect_back_or user
+        redirect_back_or users_path
 
       else
 

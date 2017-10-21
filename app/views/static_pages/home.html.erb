@@ -1,71 +1,74 @@
 <% if logged_in? %>
+	<div class="jumbotron jumbotron-fluid">
+	<div class="container text-center">
+		<h3>Race 615 - East Nashville Edition</h3>
+	  <p>Sat Oct 28th - 1:00 PM</p>
+		<%= link_to "See who's registred", users_path, class: "btn btn-lg btn-primary" %>
+	</div>
+</div>
 
-  <div class="row">
-
-    <aside class="col-md-4">
-
-      <section class="user_info">
-
-        <%= render 'shared/user_info' %>
-
-      </section>
-
-      <section class="micropost_form">
-
-        <%= render 'shared/micropost_form' %>
-
-      </section>
-
-    </aside>
-
-    <div class="col-md-8">
-
-       <h3>Micropost Feed</h3>
-
-      <%= render 'shared/feed' %>
-
-    </div>
-
-  </div>
 
 <% else %>
-
 
 
 <div class="jumbotron jumbotron-fluid">
 	<div class="container text-center">
 		<h3>Race 615 - East Nashville Edition</h3>
-	  <p>Sat Oct 28th - 1:30 PM</p>
+	  <p>Sat Oct 28th - 1:00 PM</p>
 		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 	</div>
 </div>
 
-
-<div class="section">
-    <div class="container the-rules">
-      <div class="columns">
-        <div class="column is-2">
-        </div>
-        <div class="column is-10">
-          <div class="content">
-            <p class="title is-2">The Race</p>
-            <p class="subtitle is-4">Here's how it works</p>
-            </br>
-            <ol>
-              <li>Race615 will begin at Cumberland Park under the pedestrian bridge on Saturday, September 24 at 12:00. Come early to get ready and size up the competition : )</li>
-              <li>Parking at Cumberland Park is normally free (you can park in the Titans stadium parking Lot R), but if there is an event there, it may be $5... Cabbing/Ubering/carpooling to the park is also always an option!</li>
-              <li>You will be interacting with THIS web app in order to receive clues and submit responses, so you will need to have internet access on your phones. (We suggest that your team have 2 fully charged cell phones)</li>
-              <li>All travel will be on foot unless otherwise specified. </li>
-              <li>You will have ONE opportunity to use an Uber/Lyft, so make sure at least one person per team has either Uber/Lyft downloaded and ready to go. </li>
-              <li>One partner will be required to use a B-Cycle, which has a $5 24-hour membership fee which can be purchased either during the race (or before the race if you don't want to waste time!) at any B-Cycle station. </li>
-              <li>You will need to bring: 1 pen/pencil, 2 fully charged cell phones, and 1 individually wrapped small snack per teammate (ex: snickers bar, crackers, bag of chips)... if you need a way to carry these things, fanny packs are awesome!</li>
-            </ol>
-            <h4>Register by clicking any of the Sign Up! buttons!!!</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 <% end %>
+
+
+<div class="container">
+	<h1>How it Works</h1>
+	<p class="lead">
+		RACE615 is an Amazing Race style event. Amazing Race is a (really good!) reality TV show where teams of 2 compete in a race around the world. Teams are given clues that take them to different locations, and they must complete physical/mental challenges along the way. 
+
+We are going to keep it local, so all travel will be on foot-- and occasionally by Uber or bike--  around East Nashville. This round, we will be sticking specifically to <b class="font-weight-bold">East Nashville.</b> You should expect the race to take about 3 hours and you will be walking/jogging about 3.5-4 miles in total. There will be mental challenges that will test your problem solving abilities, physical challenges that will test your strength as a team, and mandatory food/beverage breaks along the way. We have created this event with our friends and family in mind, so nothing is going to be unpleasant- only fun!
+	</p>
+	<h3>What you need to know</h3>
+	<ol>
+		<li>
+			Race615 will begin at <%= link_to "East Park", "https://www.google.com/maps/place/East+Park/@36.1810602,-86.773038,13z/data=!4m8!1m2!2m1!1seast+park!3m4!1s0x886467cd4c03e405:0xc8d0f6aa50fea8ca!8m2!3d36.1729263!4d-86.7602371", target: :_blank %> on <b class="font-weight-bold">Saturday, September 28 at 1:00PM.</b> Come early to get ready and size up the competition : )
+		</li>
+		<li>
+			Parking around East Park on the street is free. Cabbing/Lyfting/carpooling to the park is also always an option!
+		</li>
+		<li>
+			You will be interacting with a <b>this web app</b> in order to receive clues and submit responses, so you will need to have internet access on your phones. (We suggest that your team have 2 fully charged cell phones)
+		</li>
+		<li>
+			Use your resources! Clues are difficult/obscure, so Google searching or asking locals is encouraged!
+		</li>
+		<li>
+			All travel will be on foot unless otherwise specified. You will walk/ jog about 4 miles.
+		</li>
+		<li>
+			<b>You will need to bring:</b> 1 pen/pencil, 2 fully charged cell phones, and 1 individually wrapped small snack per teammate (ex: snickers bar, crackers, bag of chips)... if you need a way to carry these things, <%= link_to "fanny packs are awesome!", "https://www.bonanza.com/booths/Bam_Products?item_sort_options[filter_string]=Neon+Fanny+Pack", target: :_blank %>
+		</li>
+		<li>
+			Team costumes/ outfits are encouraged. It is Halloween weekend, afterall!
+		</li>
+	</ol>
+	<h3>How to participate</h3>
+	<ol>
+		<li> Register on the site by clicking the sign up button</li>
+		<li> Have your teammate register on the site as well</li>
+		<li> Create a team on the site (coming soon!)</li>
+		<li> Have your teammate join your team (teams of 2 required)</li>
+		<li> Show up on Saturday ready to have fun :)</li>
+	</ol>
+
+	<p>
+		YAY! We are SO EXCITED to be putting this event on for all of you, so please let us know if you have any further questions. 
+
+See you on the race course : )
+-The WarDorrs
+	</p>
+
+ 
+</div>
+
