@@ -30,33 +30,42 @@
 
 <% else %>
 
-<div class="center jumbotron">
-
-  <h1>Welcome to the Sample App</h1>
 
 
-
-  <h2>
-
-    This is the home page for the
-
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-
-    sample application.
-
-  </h2>
-
-
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-
+<div class="jumbotron jumbotron-fluid">
+	<div class="container text-center">
+		<h3>Race 615 - East Nashville Edition</h3>
+	  <p>Sat Oct 28th - 1:30 PM</p>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
 </div>
 
 
-
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-
-            'http://rubyonrails.org/' %>
+<div class="section">
+    <div class="container the-rules">
+      <div class="columns">
+        <div class="column is-2">
+        </div>
+        <div class="column is-10">
+          <div class="content">
+            <p class="title is-2">The Race</p>
+            <p class="subtitle is-4">Here's how it works</p>
+            </br>
+            <ol>
+              <li>Race615 will begin at Cumberland Park under the pedestrian bridge on Saturday, September 24 at 12:00. Come early to get ready and size up the competition : )</li>
+              <li>Parking at Cumberland Park is normally free (you can park in the Titans stadium parking Lot R), but if there is an event there, it may be $5... Cabbing/Ubering/carpooling to the park is also always an option!</li>
+              <li>You will be interacting with THIS web app in order to receive clues and submit responses, so you will need to have internet access on your phones. (We suggest that your team have 2 fully charged cell phones)</li>
+              <li>All travel will be on foot unless otherwise specified. </li>
+              <li>You will have ONE opportunity to use an Uber/Lyft, so make sure at least one person per team has either Uber/Lyft downloaded and ready to go. </li>
+              <li>One partner will be required to use a B-Cycle, which has a $5 24-hour membership fee which can be purchased either during the race (or before the race if you don't want to waste time!) at any B-Cycle station. </li>
+              <li>You will need to bring: 1 pen/pencil, 2 fully charged cell phones, and 1 individually wrapped small snack per teammate (ex: snickers bar, crackers, bag of chips)... if you need a way to carry these things, fanny packs are awesome!</li>
+            </ol>
+            <h4>Register by clicking any of the Sign Up! buttons!!!</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <% end %>

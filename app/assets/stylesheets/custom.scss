@@ -122,6 +122,11 @@ p {
 
 /* header */
 
+.navbar-inverse {
+  background-color: #ADD8E6;
+
+}
+
 
 
 #logo {
@@ -490,3 +495,16 @@ span.picture {
    }
 
 }
+
+.jumbotron {
+    position: relative;
+    color: #fff;
+    background: #fff url("home_carousel_1.jpg") center center;
+    width: 100%;
+    min-height: 500px;
+    padding-top: 45%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
