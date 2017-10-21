@@ -67,7 +67,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
-  host = 'safe-garden-51504.herokuapp.com'
+  host = 'race615.herokuapp.com'
 
   config.action_mailer.default_url_options = { host: host }
 
