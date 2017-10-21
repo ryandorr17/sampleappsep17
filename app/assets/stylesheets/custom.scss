@@ -499,7 +499,8 @@ span.picture {
 .jumbotron {
     position: relative;
     color: #fff;
-    background: #fff url("home_carousel_1.jpg") center center;
+    background: #fff center center;
+    background-image: image-url("home_carousel_1.jpg");
     width: 100%;
     min-height: 500px;
     padding-top: 45%;
