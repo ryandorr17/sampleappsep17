@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many      :microposts, dependent: :destroy
   has_many      :responses
-  belongs_to    :team
+  # belongs_to    :team
 
   before_save   :downcase_email
 
