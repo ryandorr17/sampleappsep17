@@ -1,0 +1,49 @@
+<%= form_with(model: clue, local: true) do |form| %>
+  <% if clue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clue.errors.count, "error") %> prohibited this clue from being saved:</h2>
+
+      <ul>
+      <% clue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :stop %>
+    <%= form.number_field :stop, id: :clue_stop %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :clue_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clue %>
+    <%= form.text_area :clue, id: :clue_clue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activity %>
+    <%= form.text_field :activity, id: :clue_activity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer %>
+    <%= form.text_field :answer, id: :clue_answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <span>
+      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

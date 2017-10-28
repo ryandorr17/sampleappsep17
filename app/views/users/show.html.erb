@@ -18,22 +18,45 @@
 
   </aside>
 
-  <div class="col-md-8">
-
-     <% if @user.microposts.any? %>
-
-       <h3></a>Microposts (<%= @user.microposts.count %>)</h3>
-
-       <ol class="microposts">
-
-         <%= render @microposts %>
-
-       </ol>
-
-       <%= will_paginate @microposts %>
-
-     <% end %>
-
-   </div>
-
 </div>
+
+<% if @user == current_user %>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Your clue:</h3>
+        <% clue = @clues.find_by(stop: current_round(@user)) %>
+        <p><%= clue.clue %></p>
+        <% if !clue.picture.nil? %>
+          <img class="img-responsive"src="<%= clue.picture %>"/>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <aside class="col-md-4 col-md-offset-2">
+        <section class="response_form">
+          <%= form_for(@response, html: { multipart: true}) do |f| %>
+            <div class="field">
+              <%= f.text_area :guess, placeholder: "Enter your guess..." %>
+            </div>
+            <%= f.hidden_field :round_number, :value => current_round(@user) %>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+            <div><%= f.file_field :picture, class: "btn" %></div>
+          <% end %>
+        </section>
+      </aside>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Your pics</h3>
+        <% if @responses %>
+          <% @responses.each do |response| %>
+            <div><%= image_tag response.picture_url if response.picture? %></div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>

@@ -1,0 +1,32 @@
+<li>
+
+  <%= image_tag team.picture.url if team.picture? %>
+
+  <span class="content"><%= team.team_name %></span>
+	  
+  <span class="content"><%= team.tagline %></span>
+
+  <%= team.users.each do |user| %>
+  	<p> user.name </p>
+
+  <% end %>
+
+  <% if team.users.count < 2 %>
+  <%= render 'join_team' %>
+
+  <% end %>
+
+
+  <%= team.users.count %>
+
+  
+
+
+  <% if current_user.admin? %>
+
+  <%= link_to "delete", team, method: :delete,
+
+                                       data: { confirm: "You sure?" } %>
+  <% end %>
+
+</li>

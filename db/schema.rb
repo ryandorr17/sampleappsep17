@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021061023) do
+ActiveRecord::Schema.define(version: 20171027205234) do
+
+  create_table "clues", force: :cascade do |t|
+    t.integer "stop"
+    t.string "location"
+    t.text "clue"
+    t.string "activity"
+    t.string "answer"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -20,6 +31,29 @@ ActiveRecord::Schema.define(version: 20171021061023) do
     t.string "picture"
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.string "guess"
+    t.boolean "correct", default: false
+    t.integer "round_number"
+    t.string "picture"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_responses_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_responses_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team_name"
+    t.string "tagline"
+    t.string "picture"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_teams_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,6 +70,7 @@ ActiveRecord::Schema.define(version: 20171021061023) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.string "phone"
+    t.integer "team_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :responses, only: [:create, :index]
+  resources :clues
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
 
   post '/signup',  to: 'users#create'
 
+  post '/join_team',    to: 'users#join_team'  
+
   get  '/login',   to: 'sessions#new'
 
   post '/login',   to: 'sessions#create'
@@ -29,6 +33,8 @@ Rails.application.routes.draw do
   resources :password_resets, only:[:new, :create, :edit, :update]
 
   resources :microposts,  only: [:create, :destroy]
+
+  resources :teams, only: [:create, :destroy]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

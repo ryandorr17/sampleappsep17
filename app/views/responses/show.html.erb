@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guess:</strong>
+  <%= @response.guess %>
+</p>
+
+<p>
+  <strong>Correct:</strong>
+  <%= @response.correct %>
+</p>
+
+<p>
+  <strong>Round number:</strong>
+  <%= @response.round_number %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @response.picture %>
+</p>
+
+<%= link_to 'Edit', edit_response_path(@response) %> |
+<%= link_to 'Back', responses_path %>

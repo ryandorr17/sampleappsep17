@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stop:</strong>
+  <%= @clue.stop %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @clue.location %>
+</p>
+
+<p>
+  <strong>Clue:</strong>
+  <%= @clue.clue %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @clue.activity %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @clue.answer %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @clue.picture %>
+</p>
+
+<%= link_to 'Edit', edit_clue_path(@clue) %> |
+<%= link_to 'Back', clues_path %>

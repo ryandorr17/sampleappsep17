@@ -1,0 +1,37 @@
+<%= form_with(model: response, local: true) do |form| %>
+  <% if response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% response.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :guess %>
+    <%= form.text_field :guess, id: :response_guess %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correct %>
+    <%= form.check_box :correct, id: :response_correct %>
+  </div>
+
+  <div class="field">
+    <%= form.label :round_number %>
+    <%= form.number_field :round_number, id: :response_round_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :response_picture %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

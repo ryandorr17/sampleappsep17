@@ -28,9 +28,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
-
+    # @microposts = @user.microposts.paginate(page: params[:page])
+    @clues = Clue.all
     redirect_to root_url and return unless @user.activated?
+    @response = current_user.responses.build if @user == current_user
 
   end
 
@@ -51,9 +52,13 @@ class UsersController < ApplicationController
     end
 
   end
+  
 
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
+    @teams  = Team.all
+    @team = Team.create
+
   end
 
   def destroy
@@ -70,7 +75,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :phone, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :phone, :team_id, :password, :password_confirmation)
     end
 
 

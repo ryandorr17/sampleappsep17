@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many      :microposts, dependent: :destroy
+  has_many      :responses
+  belongs_to    :team
 
   before_save   :downcase_email
 
@@ -103,6 +105,10 @@ class User < ApplicationRecord
 
   end
 
+
+  def join_team
+    self.update_attribute(:team_id, @team)
+  end
 
 
   private

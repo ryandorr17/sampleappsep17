@@ -1,0 +1,7 @@
+<%= form_for(current_user.join_team, remote: true) do |f| %>
+
+  <div><%= hidden_field_tag :team_id, @team %></div>
+
+  <%= f.submit "Join", class: "btn btn-primary" %>
+
+<% end %>

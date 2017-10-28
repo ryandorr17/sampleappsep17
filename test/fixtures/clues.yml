@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stop: 1
+  location: MyString
+  clue: MyText
+  activity: MyString
+  answer: MyString
+  picture: MyString
+
+two:
+  stop: 1
+  location: MyString
+  clue: MyText
+  activity: MyString
+  answer: MyString
+  picture: MyString
