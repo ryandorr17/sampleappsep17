@@ -37,9 +37,6 @@ def destroy
 end
 
 
-end
-
-
 private
 
 
