@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :books
   resources :responses, only: [:create, :index]
   resources :clues
   get 'password_resets/new'
