@@ -73,4 +73,9 @@ class CluesController < ApplicationController
     def clue_params
       params.require(:clue).permit(:stop, :location, :clue, :activity, :answer, :picture)
     end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+    
 end
