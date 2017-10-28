@@ -5,7 +5,7 @@ class Response < ApplicationRecord
 
   def check_answer
 
-  	if self.round_number = 4
+  	if self.round_number == 4
   		check_book_answer
 
   	else
